@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>381</width>
+    <height>350</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <widget class="QPushButton" name="pushButtonPut">
+    <property name="geometry">
+     <rect>
+      <x>80</x>
+      <y>260</y>
+      <width>101</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Start</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButtonStop">
+    <property name="geometry">
+     <rect>
+      <x>190</x>
+      <y>260</y>
+      <width>101</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Stop</string>
+    </property>
+   </widget>
+   <widget class="QPlainTextEdit" name="plainTextEdit">
+    <property name="geometry">
+     <rect>
+      <x>190</x>
+      <y>10</y>
+      <width>171</width>
+      <height>241</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QWidget" name="">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>10</y>
+      <width>171</width>
+      <height>241</height>
+     </rect>
+    </property>
+    <layout class="QGridLayout" name="gridLayout">
+     <item row="0" column="0">
+      <layout class="QFormLayout" name="formLayout">
+       <item row="1" column="1">
+        <layout class="QFormLayout" name="formLayout_2">
+         <item row="3" column="0">
+          <widget class="QPushButton" name="pushButtonConnect">
+           <property name="baseSize">
+            <size>
+             <width>30</width>
+             <height>10</height>
+            </size>
+           </property>
+           <property name="text">
+            <string>Connect</string>
+           </property>
+          </widget>
+         </item>
+         <item row="3" column="1">
+          <widget class="QPushButton" name="pushButtonDisconnect">
+           <property name="text">
+            <string>Disconnect</string>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="0">
+          <widget class="QLabel" name="label">
+           <property name="text">
+            <string>Ip do servidor:</string>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="1">
+          <widget class="QLineEdit" name="lineEditIP"/>
+         </item>
+        </layout>
+       </item>
+      </layout>
+     </item>
+     <item row="1" column="0">
+      <layout class="QFormLayout" name="formLayout_3">
+       <item row="2" column="0">
+        <widget class="QSlider" name="horizontalSliderMin">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="1">
+        <widget class="QLCDNumber" name="lcdNumberMin"/>
+       </item>
+       <item row="5" column="0">
+        <widget class="QSlider" name="horizontalSliderMax">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+        </widget>
+       </item>
+       <item row="5" column="1">
+        <widget class="QLCDNumber" name="lcdNumberMax"/>
+       </item>
+       <item row="1" column="0">
+        <widget class="QLabel" name="labelMin">
+         <property name="text">
+          <string>Min:</string>
+         </property>
+        </widget>
+       </item>
+       <item row="4" column="0">
+        <widget class="QLabel" name="labelMax">
+         <property name="text">
+          <string>Max:</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+     <item row="2" column="0">
+      <layout class="QFormLayout" name="formLayout_4">
+       <item row="0" column="0">
+        <widget class="QLabel" name="labelFreq">
+         <property name="text">
+          <string>Frequência:</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="0">
+        <widget class="QSlider" name="horizontalSliderFreq">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="1">
+        <widget class="QLCDNumber" name="lcdNumberFreq"/>
+       </item>
+      </layout>
+     </item>
+    </layout>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>381</width>
+     <height>21</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QToolBar" name="mainToolBar">
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+  </widget>
+  <widget class="QStatusBar" name="statusBar"/>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>horizontalSliderMin</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>lcdNumberMin</receiver>
+   <slot>display(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>68</x>
+     <y>165</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>178</x>
+     <y>169</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>horizontalSliderMax</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>lcdNumberMax</receiver>
+   <slot>display(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>71</x>
+     <y>219</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>178</x>
+     <y>223</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>horizontalSliderFreq</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>lcdNumberFreq</receiver>
+   <slot>display(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>72</x>
+     <y>254</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>124</x>
+     <y>260</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>
